@@ -1,0 +1,22 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainlayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
+    android:gravity="bottom|center_vertical|fill_vertical"
+    android:orientation="vertical" >
+
+    <ListView
+        android:id="@+id/counter_frame"
+        android:layout_width="match_parent"
+        android:layout_height="410dp" >
+    </ListView>
+
+    <Button
+        android:id="@+id/create"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/create" />
+
+</LinearLayout>

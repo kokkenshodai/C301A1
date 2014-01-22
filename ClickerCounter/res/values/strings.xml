@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ClickerCounter</string>
+    <string name="action_settings">Settings</string>
+    <string name="create">Create Counter</string>
+    <string name="newname">Create Counter</string>
+    <string name="entercountername">Enter Name of New Counter: </string>
+    <string name="newcountercreation">New Counter Creation</string>
+    <string name="exitcount">Exit Counting Mode</string>
+    <string name="reset">Reset This Counter</string>
+    <string name="delete">Delete This Counter</string>
+
+</resources>
