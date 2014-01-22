@@ -1,8 +1,6 @@
 package clickercounter;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashSet;
 
 
 public abstract class CountStatisticList
