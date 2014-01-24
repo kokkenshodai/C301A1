@@ -10,8 +10,14 @@
     <ListView
         android:id="@+id/counter_frame"
         android:layout_width="match_parent"
-        android:layout_height="410dp" >
+        android:layout_height="364dp" >
     </ListView>
+
+    <Button
+        android:id="@+id/order"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/order" />
 
     <Button
         android:id="@+id/create"

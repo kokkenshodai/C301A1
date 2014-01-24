@@ -10,5 +10,21 @@
     <string name="exitcount">Exit Counting Mode</string>
     <string name="reset">Reset This Counter</string>
     <string name="delete">Delete This Counter</string>
+    <string name="order">Order Counters By Count</string>
+    <string name="resumecount">Resume Counting Mode</string>
+    <string name="sbh">Get Statistics By Hour</string>
+    <string name="sbd">Get Statistics By Day</string>
+    <string name="sbw">Get Statistics By Week</string>
+    <string name="sbm">Get Statistics By Month</string>
+    <string name="countermenu">Go to Counter Menu</string>
+    <string name="rename">Rename This Counter</string>
+    <string name="deletecountertitle">Delete This Counter</string>
+    <string name="deleteconfirm">Delete</string>
+    <string name="deletecancel">Cancel</string>
+    <string name="resetcountertitle">Reset This Counter</string>
+    <string name="resetconfirm">Reset</string>
+    <string name="resetcancel">Cancel</string>
+    <string name="renamecounter">Rename Counter</string>
+    <string name="renamecounterbutton">Rename</string>
 
 </resources>

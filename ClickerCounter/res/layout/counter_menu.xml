@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/statisticsbyhour"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/sbh" />
+
+    <Button
+        android:id="@+id/statisticsbyday"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/sbd" />
+
+    <Button
+        android:id="@+id/statisticsbyweek"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/sbw" />
+
+    <Button
+        android:id="@+id/statisticsbymonth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/sbm" />
+
+    <Button
+        android:id="@+id/renamebutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/rename" />
+
+    <Button
+        android:id="@+id/counterscreenresetbutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/reset" />
+
+    <Button
+        android:id="@+id/counterscreendeletebutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/delete" />
+
+    <Button
+        android:id="@+id/counterscreenexitbutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/exitcount" />
+
+    <Button
+        android:id="@+id/counterscreenresume"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/resumecount" />
+
+</LinearLayout>

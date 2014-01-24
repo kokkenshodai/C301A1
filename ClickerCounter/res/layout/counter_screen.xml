@@ -21,21 +21,9 @@
         android:textSize="20dp" />
 
     <Button
-        android:id="@+id/counterscreenresetbutton"
+        android:id="@+id/countermenu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/reset" />
-
-    <Button
-        android:id="@+id/counterscreendeletebutton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/delete" />
-
-    <Button
-        android:id="@+id/counterscreenexitbutton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/exitcount" />
+        android:text="@string/countermenu" />
 
 </LinearLayout>

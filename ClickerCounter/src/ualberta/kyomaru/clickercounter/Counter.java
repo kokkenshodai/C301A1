@@ -20,9 +20,19 @@ public class Counter
 		counts.add(new Date());
 	}
 	
+	public void reset()
+	{
+		counts = new ArrayList<Date>();
+	}
+	
 	public String getType()
 	{
 		return type;
+	}
+	
+	public void rename(String newName)
+	{
+		type = newName;
 	}
 	
 	public int getCounts()
@@ -77,6 +87,6 @@ public class Counter
 	@Override
 	public String toString()
 	{
-		return type + "\n" + getCounts();
+		return "Counter: " + type + "\nCounts : " + getCounts();
 	}
 }
