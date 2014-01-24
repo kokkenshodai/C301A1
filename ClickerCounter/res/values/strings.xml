@@ -26,5 +26,10 @@
     <string name="resetcancel">Cancel</string>
     <string name="renamecounter">Rename Counter</string>
     <string name="renamecounterbutton">Rename</string>
+	<string name="ok">OK</string>
+	<string name="hourlystatstitle">Hourly Counter Statistics</string>
+	<string name="dailystatstitle">Daily Counter Statistics</string>
+	<string name="weeklystatstitle">Weekly Counter Statistics</string>
+	<string name="monthlystatstitle">Monthly Counter Statistics</string>
 
 </resources>

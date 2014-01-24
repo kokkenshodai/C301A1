@@ -28,6 +28,7 @@ public class WeeklyCSL extends CountStatisticList
 		else
 		{
 			CountStatistic newCount = new CountStatistic(event, "Week of " + format.format(event));
+			newCount.addCount();
 			this.getStatistics().add(newCount);
 		}
 	}

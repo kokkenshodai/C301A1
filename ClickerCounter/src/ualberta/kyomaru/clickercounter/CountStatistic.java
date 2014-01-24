@@ -34,7 +34,14 @@ public class CountStatistic
 	public CountStatistic(Date period, String name)
 	{
 		this.period = period;
+		this.name = name;
 		counts = 0;
+	}
+	
+	@Override
+	public String toString()
+	{
+		return name + ":\n" + counts;
 	}
 	
 }

@@ -28,6 +28,7 @@ public class DailyCSL extends CountStatisticList
 		else
 		{
 			CountStatistic newCount = new CountStatistic(event, format.format(event));
+			newCount.addCount();
 			this.getStatistics().add(newCount);
 		}
 	}

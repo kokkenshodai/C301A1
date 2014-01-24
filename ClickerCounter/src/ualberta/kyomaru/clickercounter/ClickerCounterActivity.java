@@ -151,9 +151,44 @@ public class ClickerCounterActivity extends Activity
 		{
 			setContentView(R.layout.counter_menu);
 			final Button sbh = (Button)findViewById(R.id.statisticsbyhour);
+			sbh.setOnClickListener(new View.OnClickListener() {
+
+				public void onClick(View v) {
+					setResult(RESULT_OK);
+					getHourlyStats();
+				}
+			});
+			
 			final Button sbd = (Button)findViewById(R.id.statisticsbyday);
+			sbd.setOnClickListener(new View.OnClickListener() {
+
+				public void onClick(View v) {
+					setResult(RESULT_OK);
+					getDailyStats();
+				}
+			});
+			
+			
 			final Button sbw = (Button)findViewById(R.id.statisticsbyweek);
+			sbw.setOnClickListener(new View.OnClickListener() {
+
+				public void onClick(View v) {
+					setResult(RESULT_OK);
+					getWeeklyStats();
+				}
+			});
+			
+			
 			final Button sbm = (Button)findViewById(R.id.statisticsbymonth);
+			sbm.setOnClickListener(new View.OnClickListener() {
+
+				public void onClick(View v) {
+					setResult(RESULT_OK);
+					getMonthlyStats();
+				}
+			});
+			
+			
 			
 			final Button rename = (Button)findViewById(R.id.renamebutton);
 			rename.setOnClickListener(new View.OnClickListener() {
@@ -199,6 +234,106 @@ public class ClickerCounterActivity extends Activity
 					resumeCounting();
 				}
 			});
+		}
+		
+		private void getHourlyStats() {
+		    final View mView = View.inflate(this, R.layout.statdialog, null);
+		    final ListView lv = (ListView)mView.findViewById(R.id.statlist);
+		    final ArrayAdapter<CountStatistic> aa = new ArrayAdapter<CountStatistic>(this,R.layout.counter_button,currentCounter.getHourlyStatistics());
+		    lv.setAdapter(aa);
+		    
+		    final InputMethodManager mInputMethodManager = (InputMethodManager) mView.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+		    mInputMethodManager.restartInput(mView);
+
+		    AlertDialog.Builder mBuilder = new AlertDialog.Builder(this);
+		    mBuilder.setTitle(getString(R.string.hourlystatstitle));
+		    mBuilder.setPositiveButton(getString(R.string.ok), new Dialog.OnClickListener() {
+		        public void onClick(DialogInterface mDialogInterface, int mWhich) {
+		        	switchToMenuContext();
+		        }
+		    });
+		    mBuilder.setView(mView);
+		    mBuilder.show();
+
+		    if (mInputMethodManager != null) {
+		    mInputMethodManager.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
+		    }
+		    
+		}
+		
+		private void getDailyStats() {
+		    final View mView = View.inflate(this, R.layout.statdialog, null);
+		    final ListView lv = (ListView)mView.findViewById(R.id.statlist);
+		    final ArrayAdapter<CountStatistic> aa = new ArrayAdapter<CountStatistic>(this,R.layout.counter_button,currentCounter.getDailyStatistics());
+		    lv.setAdapter(aa);
+		    
+		    final InputMethodManager mInputMethodManager = (InputMethodManager) mView.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+		    mInputMethodManager.restartInput(mView);
+
+		    AlertDialog.Builder mBuilder = new AlertDialog.Builder(this);
+		    mBuilder.setTitle(getString(R.string.hourlystatstitle));
+		    mBuilder.setPositiveButton(getString(R.string.ok), new Dialog.OnClickListener() {
+		        public void onClick(DialogInterface mDialogInterface, int mWhich) {
+		        	switchToMenuContext();
+		        }
+		    });
+		    mBuilder.setView(mView);
+		    mBuilder.show();
+
+		    if (mInputMethodManager != null) {
+		    mInputMethodManager.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
+		    }
+		    
+		}
+		
+		private void getWeeklyStats() {
+		    final View mView = View.inflate(this, R.layout.statdialog, null);
+		    final ListView lv = (ListView)mView.findViewById(R.id.statlist);
+		    final ArrayAdapter<CountStatistic> aa = new ArrayAdapter<CountStatistic>(this,R.layout.counter_button,currentCounter.getWeeklyStatistics());
+		    lv.setAdapter(aa);
+		    
+		    final InputMethodManager mInputMethodManager = (InputMethodManager) mView.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+		    mInputMethodManager.restartInput(mView);
+
+		    AlertDialog.Builder mBuilder = new AlertDialog.Builder(this);
+		    mBuilder.setTitle(getString(R.string.hourlystatstitle));
+		    mBuilder.setPositiveButton(getString(R.string.ok), new Dialog.OnClickListener() {
+		        public void onClick(DialogInterface mDialogInterface, int mWhich) {
+		        	switchToMenuContext();
+		        }
+		    });
+		    mBuilder.setView(mView);
+		    mBuilder.show();
+
+		    if (mInputMethodManager != null) {
+		    mInputMethodManager.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
+		    }
+		    
+		}
+		
+		private void getMonthlyStats() {
+		    final View mView = View.inflate(this, R.layout.statdialog, null);
+		    final ListView lv = (ListView)mView.findViewById(R.id.statlist);
+		    final ArrayAdapter<CountStatistic> aa = new ArrayAdapter<CountStatistic>(this,R.layout.counter_button,currentCounter.getMonthlyStatistics());
+		    lv.setAdapter(aa);
+		    
+		    final InputMethodManager mInputMethodManager = (InputMethodManager) mView.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+		    mInputMethodManager.restartInput(mView);
+
+		    AlertDialog.Builder mBuilder = new AlertDialog.Builder(this);
+		    mBuilder.setTitle(getString(R.string.hourlystatstitle));
+		    mBuilder.setPositiveButton(getString(R.string.ok), new Dialog.OnClickListener() {
+		        public void onClick(DialogInterface mDialogInterface, int mWhich) {
+		        	switchToMenuContext();
+		        }
+		    });
+		    mBuilder.setView(mView);
+		    mBuilder.show();
+
+		    if (mInputMethodManager != null) {
+		    mInputMethodManager.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
+		    }
+		    
 		}
 		
 		private void deleteCounter() {
