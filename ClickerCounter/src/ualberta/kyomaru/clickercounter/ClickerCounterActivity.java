@@ -1,6 +1,19 @@
 package ualberta.kyomaru.clickercounter;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -25,13 +38,16 @@ import android.widget.TextView;
 public class ClickerCounterActivity extends Activity
 {
 
+		//Global variables
 		private static final String FILENAME = "file.sav";
-		private static ArrayList<Counter> counters;
 		private ListView counterListView;
 		private ArrayAdapter<Counter> adapter;
+		private Gson gson = new Gson();
+		
+		//State variables that are saved and loaded
+		private static ArrayList<Counter> counters;
 		private Counter currentCounter;
 		private int currentCounterIndex;
-		//private Gson gson = new Gson();
 		
 		/** Called when the activity is first created. */
 		@Override
@@ -60,9 +76,108 @@ public class ClickerCounterActivity extends Activity
 					switchToCounterContext(item);
 				}
 			});
+			
+			Button orderButton = (Button) findViewById(R.id.order);
+
+			orderButton.setOnClickListener(new View.OnClickListener() {
+
+				public void onClick(View v) {
+					setResult(RESULT_OK);
+					orderCounters();
+				}
+			});
+
+		}
+		
+		@Override
+		protected void onStart() {
+			super.onStart();
+		}
+		
+		@Override
+		protected void onResume() {
+			super.onResume();
+			load();
+			adapter = new ArrayAdapter<Counter>(this,
+					R.layout.counter_button, counters);
+			counterListView.setAdapter(adapter);
+		}
+		
+		private void save()
+		{
+			try
+			{
+				FileOutputStream fos = openFileOutput(FILENAME, Context.MODE_PRIVATE);
+				BufferedWriter out = new BufferedWriter(new OutputStreamWriter(fos));
+				
+				String json = gson.toJson(counters);
+				out.write(json + "\n");
+				json = gson.toJson(currentCounter);
+				out.write(json + "\n");
+				json = gson.toJson(currentCounterIndex);
+				out.write(json + "\n");
+				
+				out.close();
+				fos.close();
+			} catch (IOException e)
+			{
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+		}
+		
+		private void load()
+		{
+			try
+			{
+				FileInputStream fis = openFileInput(FILENAME);
+				BufferedReader in = new BufferedReader(new InputStreamReader(fis));
+				
+				String line = in.readLine();
+				if(in == null) {counters = new ArrayList<Counter>();return;}
+				System.out.println(line);
+				counters = gson.fromJson(line, new TypeToken<ArrayList<Counter>>(){}.getType());
+				
+				line = in.readLine();
+				if(in == null) {if(counters == null)counters = new ArrayList<Counter>(); return;}
+				System.out.println(line);
+				currentCounter = gson.fromJson(line, Counter.class);
+				
+				line = in.readLine();
+				if(in == null) {if(counters == null)counters = new ArrayList<Counter>(); return;}
+				System.out.println(line);
+				currentCounterIndex = gson.fromJson(line, Integer.class);
+				
+				in.close();
+				fis.close();
+
+				if(counters == null)
+					counters = new ArrayList<Counter>();
+				} 
+			catch (IOException e)
+			{
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		private void orderCounters()
+		{
+			Collections.sort(counters, new Comparator<Counter>(){
+			    public int compare(Counter C1, Counter C2) {
+
+			        return C2.getCounts() - C1.getCounts();
+			    }
+			});
+			adapter.notifyDataSetChanged();
+			save();
 		}
 
-		public void resumeMain() {
+		//Context switch methods
+		//
+		//
+		private void resumeMain() {
 			setContentView(R.layout.activity_clicker_counter);
 			counterListView = (ListView) findViewById(R.id.counter_frame);
 			Button createButton = (Button) findViewById(R.id.create);
@@ -85,16 +200,18 @@ public class ClickerCounterActivity extends Activity
 					switchToCounterContext(item);
 				}
 			});
+			
+			Button orderButton = (Button) findViewById(R.id.order);
+
+			orderButton.setOnClickListener(new View.OnClickListener() {
+
+				public void onClick(View v) {
+					setResult(RESULT_OK);
+					orderCounters();
+				}
+			});
 		}
-		
-		@Override
-		protected void onStart() {
-			super.onStart();
-			adapter = new ArrayAdapter<Counter>(this,
-					R.layout.counter_button, counters);
-			counterListView.setAdapter(adapter);
-		}
-		
+	
 		private void switchToCounterContext(int item)
 		{
 			setContentView(R.layout.counter_screen);
@@ -109,6 +226,7 @@ public class ClickerCounterActivity extends Activity
 				public void onClick(View v) {
 					setResult(RESULT_OK);
 					currentCounter.count();
+					save();
 					t2.setText(Integer.toString(currentCounter.getCounts()));
 				}
 			});
@@ -235,7 +353,15 @@ public class ClickerCounterActivity extends Activity
 				}
 			});
 		}
+		//
+		//
+		//
 		
+		
+		//Methods to get stats
+		//
+		//
+		//
 		private void getHourlyStats() {
 		    final View mView = View.inflate(this, R.layout.statdialog, null);
 		    final ListView lv = (ListView)mView.findViewById(R.id.statlist);
@@ -335,7 +461,13 @@ public class ClickerCounterActivity extends Activity
 		    }
 		    
 		}
+		//
+		//
+		//
 		
+		//Methods for counter creation and modification
+		//
+		//
 		private void deleteCounter() {
 		    final View mView = View.inflate(this, R.layout.deletedialog, null);
 		    final TextView text = (TextView) mView.findViewById(R.id.deletedialogtext);
@@ -352,6 +484,7 @@ public class ClickerCounterActivity extends Activity
 		        	counters.remove(currentCounterIndex);
 		        	currentCounter = null;
 		        	currentCounterIndex = -1;
+		        	save();
 		        	resumeMain();
 		      }
 		    });
@@ -384,6 +517,7 @@ public class ClickerCounterActivity extends Activity
 		        public void onClick(DialogInterface mDialogInterface, int mWhich) {
 		 
 		        	currentCounter.reset();
+		        	save();
 		        	resumeCounting();
 		      }
 		    });
@@ -418,6 +552,7 @@ public class ClickerCounterActivity extends Activity
 		        String mCounterName = newNameText.getText().toString().trim();
 		        if (mCounterName.length() > 0) {
 		            currentCounter.rename(mCounterName);
+		            save();
 		            resumeCounting();
 		        }
 		      }
@@ -447,6 +582,7 @@ public class ClickerCounterActivity extends Activity
 		        if (mCounterName.length() > 0) {
 		            counters.add(new Counter(mCounterName));
 		            adapter.notifyDataSetChanged();
+		            save();
 		            mInputMethodManager.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
 		                mDialogInterface.dismiss();
 		        }
@@ -460,6 +596,8 @@ public class ClickerCounterActivity extends Activity
 		    }
 		    
 		}
-		
+		//
+		//
+		//
 	}
 
