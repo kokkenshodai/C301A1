@@ -5,6 +5,11 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
+/*
+ * This class takes events as Dates and
+ * aggregates them as CountStatistics 
+ * by rounding down to the nearest hour
+ */
 
 public class HourlyCSL extends CountStatisticList
 {
@@ -16,6 +21,12 @@ public class HourlyCSL extends CountStatisticList
 		super();
 	}
 
+	//the HourlyCSL version of addCount
+	//
+	//stores the number of events that 
+	//happen on each hour as a CountStatistic
+	//
+	//
 	@Override
 	public void addCount(Date event)
 	{
@@ -33,6 +44,13 @@ public class HourlyCSL extends CountStatisticList
 		}
 	}
 	
+	
+	//toWholeHour
+	//
+	//zeroes out the minute and second values of
+	//the provided Date
+	//
+	//
     static Date toWholeHour(Date d) {
     Calendar c = new GregorianCalendar();
     c.setTime(d);

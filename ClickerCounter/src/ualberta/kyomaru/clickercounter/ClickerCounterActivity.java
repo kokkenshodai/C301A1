@@ -49,10 +49,6 @@ public class ClickerCounterActivity extends Activity
 		
 		//State variables that are saved and loaded
 		private static ArrayList<Counter> counters;
-		/**
-		 * @uml.property  name="currentCounter"
-		 * @uml.associationEnd  
-		 */
 		private Counter currentCounter;
 		private int currentCounterIndex;
 		
@@ -110,6 +106,10 @@ public class ClickerCounterActivity extends Activity
 			counterListView.setAdapter(adapter);
 		}
 		
+		// save()
+		// saves counters and your current state
+		//
+		//
 		private void save()
 		{
 			try
@@ -134,6 +134,12 @@ public class ClickerCounterActivity extends Activity
 
 		}
 		
+		
+		// load()
+		// loads counters and your previous state
+		// always initiates with main menu context
+		//
+		//
 		private void load()
 		{
 			try
@@ -142,17 +148,14 @@ public class ClickerCounterActivity extends Activity
 				BufferedReader in = new BufferedReader(new InputStreamReader(fis));
 				
 				String line = in.readLine();
-				if(in == null) {counters = new ArrayList<Counter>();return;}
 				System.out.println(line);
 				counters = gson.fromJson(line, new TypeToken<ArrayList<Counter>>(){}.getType());
 				
 				line = in.readLine();
-				if(in == null) {if(counters == null)counters = new ArrayList<Counter>(); return;}
 				System.out.println(line);
 				currentCounter = gson.fromJson(line, Counter.class);
 				
 				line = in.readLine();
-				if(in == null) {if(counters == null)counters = new ArrayList<Counter>(); return;}
 				System.out.println(line);
 				currentCounterIndex = gson.fromJson(line, Integer.class);
 				
@@ -181,8 +184,11 @@ public class ClickerCounterActivity extends Activity
 			save();
 		}
 
-		//Context switch methods
+		//Context-switch methods
 		//
+		//
+		//resumeMain()
+		//Switches context back to Main
 		//
 		private void resumeMain() {
 			setContentView(R.layout.activity_clicker_counter);
@@ -219,6 +225,9 @@ public class ClickerCounterActivity extends Activity
 			});
 		}
 	
+		//switchToCounterContext()
+		//Switches context from main to counter
+		//
 		private void switchToCounterContext(int item)
 		{
 			setContentView(R.layout.counter_screen);
@@ -247,6 +256,9 @@ public class ClickerCounterActivity extends Activity
 			});
 		}
 		
+		//resumeMCounting()
+		//Switches context back to Counter
+		//
 		private void resumeCounting()
 		{
 			setContentView(R.layout.counter_screen);
@@ -272,6 +284,9 @@ public class ClickerCounterActivity extends Activity
 			});
 		}
 		
+		//switchToMenuContext()
+		//Switches context to the Counter Menu
+		//
 		private void switchToMenuContext()
 		{
 			setContentView(R.layout.counter_menu);
@@ -369,6 +384,9 @@ public class ClickerCounterActivity extends Activity
 		//
 		//
 		//
+		//getHourlyStats()
+		//Provides a popup with the hourly stats
+		//
 		private void getHourlyStats() {
 		    final View mView = View.inflate(this, R.layout.statdialog, null);
 		    final ListView lv = (ListView)mView.findViewById(R.id.statlist);
@@ -394,6 +412,9 @@ public class ClickerCounterActivity extends Activity
 		    
 		}
 		
+		//getDailyStats()
+		//Provides a popup with the daily stats
+		//
 		private void getDailyStats() {
 		    final View mView = View.inflate(this, R.layout.statdialog, null);
 		    final ListView lv = (ListView)mView.findViewById(R.id.statlist);
@@ -419,6 +440,9 @@ public class ClickerCounterActivity extends Activity
 		    
 		}
 		
+		//getWeeklyStats()
+		//Provides a popup with the weekly stats
+		//
 		private void getWeeklyStats() {
 		    final View mView = View.inflate(this, R.layout.statdialog, null);
 		    final ListView lv = (ListView)mView.findViewById(R.id.statlist);
@@ -444,6 +468,9 @@ public class ClickerCounterActivity extends Activity
 		    
 		}
 		
+		//getMonthlyStats()
+		//Provides a popup with the monthly stats
+		//
 		private void getMonthlyStats() {
 		    final View mView = View.inflate(this, R.layout.statdialog, null);
 		    final ListView lv = (ListView)mView.findViewById(R.id.statlist);
@@ -474,6 +501,10 @@ public class ClickerCounterActivity extends Activity
 		
 		//Methods for counter creation and modification
 		//
+		//
+		//deleteCounter()
+		//Deletes current counter (according to user's decision in confirmation dialog) 
+		//and returns to main menu
 		//
 		private void deleteCounter() {
 		    final View mView = View.inflate(this, R.layout.deletedialog, null);
@@ -510,6 +541,10 @@ public class ClickerCounterActivity extends Activity
 		    
 		}
 		
+		//resetCounter()
+		//resets current counter (according to user's decision in confirmation dialog) 
+		//and returns to counting
+		//
 		private void resetCounter() {
 		    final View mView = View.inflate(this, R.layout.deletedialog, null);
 		    final TextView text = (TextView) mView.findViewById(R.id.deletedialogtext);
@@ -543,6 +578,11 @@ public class ClickerCounterActivity extends Activity
 		    
 		}
 		
+		//getRenamedCounter()
+		//
+		//Provides popup interface for renaming the counter
+		//returns to counting afterwards
+		//
 		private void getRenamedCounter() {
 		    final View mView = View.inflate(this, R.layout.get_new_name, null);
 		    final EditText newNameText = (EditText) mView.findViewById(R.id.newname);
@@ -573,6 +613,11 @@ public class ClickerCounterActivity extends Activity
 		    
 		}
 
+		//getNewCounter()
+		//
+		//Provides popup interface for naming the counter
+		//returns to main menu afterwards
+		//
 		private void getNewCounter() {
 		    final View mView = View.inflate(this, R.layout.get_new_name, null);
 		    final EditText newNameText = (EditText) mView.findViewById(R.id.newname);

@@ -6,16 +6,18 @@ import java.util.Date;
 
 /**
  * @author  kyomaru
+ * 
+ * Object representing an individual clicker-counter
+ * 
+ * Allows reset of count, reassignment of type, and
+ * statistical summary according to 4 methods of 
+ * grouping of dates.
+ * 
  */
 public class Counter
 {
-	/**
-	 * @uml.property  name="counts"
-	 */
+
 	private ArrayList<Date> counts;
-	/**
-	 * @uml.property  name="type"
-	 */
 	private String type;
 	
 	public Counter(String type)
@@ -34,10 +36,6 @@ public class Counter
 		counts = new ArrayList<Date>();
 	}
 	
-	/**
-	 * @return
-	 * @uml.property  name="type"
-	 */
 	public String getType()
 	{
 		return type;
@@ -48,10 +46,6 @@ public class Counter
 		type = newName;
 	}
 	
-	/**
-	 * @return
-	 * @uml.property  name="counts"
-	 */
 	public int getCounts()
 	{
 		return counts.size();

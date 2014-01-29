@@ -5,6 +5,11 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
+/*
+ * This class takes events as Dates and
+ * aggregates them as CountStatistics 
+ * by rounding down to the nearest week
+ */
 
 public class WeeklyCSL extends CountStatisticList
 {
@@ -16,6 +21,13 @@ public class WeeklyCSL extends CountStatisticList
 		super();
 	}
 
+	//the WeeklyCSL version of addCount
+	//
+	//stores the number of events that 
+	//happen on each week as a CountStatistic
+	//(weeks start on Monday)
+	//
+	//
 	@Override
 	public void addCount(Date event)
 	{
@@ -33,6 +45,14 @@ public class WeeklyCSL extends CountStatisticList
 		}
 	}
 	
+	
+	//toWholeWeek
+	//
+	//zeroes out the hour, minute, and second values of
+	//the provided Date and sets the Date to that of the
+	//most recent Monday
+	//
+	//
     static Date toWholeWeek(Date d) {
     Calendar c = new GregorianCalendar();
     c.setTime(d);

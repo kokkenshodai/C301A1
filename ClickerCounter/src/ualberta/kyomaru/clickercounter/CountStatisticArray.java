@@ -5,56 +5,25 @@ import java.util.Calendar;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
-import java.util.Collection;
+
+//This class provides arraylist functionality with 
+// custom sorting and date search-for-index-in-array functionality
+//
 
 
-/**
- * @uml.dependency  supplier="ualberta.kyomaru.clickercounter.CountStatistic"
- */
 public class CountStatisticArray extends ArrayList<CountStatistic>
 {
 
-	/**
-	 * @uml.dependency  supplier="ualberta.kyomaru.clickercounter.CountStatistic"
-	 */
+	//Comparator for use in sorting that compares based on dates of 
+	//CountStatistics
+	//
+	//
 	public class CSComparator implements Comparator<CountStatistic>{
 
 	    public int compare(CountStatistic CS1, CountStatistic CS2) {
 
 	        return CS1.getPeriod().compareTo(CS2.getPeriod());
 	    }
-
-		/**
-		 * @uml.property  name="countStatistic"
-		 * @uml.associationEnd  
-		 */
-		private CountStatistic countStatistic;
-
-		/**
-		 * Getter of the property <tt>countStatistic</tt>
-		 * @return  Returns the countStatistic.
-		 * @uml.property  name="countStatistic"
-		 */
-		public CountStatistic getCountStatistic()
-		
-		
-		{
-		
-			return countStatistic;
-		}
-
-		/**
-		 * Setter of the property <tt>countStatistic</tt>
-		 * @param countStatistic  The countStatistic to set.
-		 * @uml.property  name="countStatistic"
-		 */
-		public void setCountStatistic(CountStatistic countStatistic)
-		
-		
-		{
-		
-			this.countStatistic = countStatistic;
-		}
 	}
 	
 	public void sort()
@@ -62,6 +31,9 @@ public class CountStatisticArray extends ArrayList<CountStatistic>
 		Collections.sort(this, new CSComparator());
 	}
 	
+	//Check if Date class equals another Date class (by-value)
+	//
+	//
 	private boolean dateEquals(Date d1, Date d2)
 	{
 		Calendar c1 = Calendar.getInstance();
@@ -78,6 +50,10 @@ public class CountStatisticArray extends ArrayList<CountStatistic>
 				&& (c1.get(Calendar.SECOND) == c2.get(Calendar.SECOND));
 	}
 	
+	//Returns the index of the first (chronologically)
+	//occurrence of argument, according to the dateEquals method
+	//
+	//
 	public int getIndex(Date date)
 	{
 		sort();
@@ -93,67 +69,4 @@ public class CountStatisticArray extends ArrayList<CountStatistic>
 		return ret;
 	}
 
-	/**
-	 * @uml.property  name="countStatisticList"
-	 * @uml.associationEnd  
-	 */
-	private CountStatisticList countStatisticList;
-
-	/** 
-	 * Getter of the property <tt>countStatisticList</tt>
-	 * @return  Returns the countStatisticList.
-	 * @uml.property  name="countStatisticList"
-	 */
-	public CountStatisticList getCountStatisticList()
-	
-	
-	
-	
-	{
-		return countStatisticList;
-	}
-
-	/** 
-	 * Setter of the property <tt>countStatisticList</tt>
-	 * @param countStatisticList  The countStatisticList to set.
-	 * @uml.property  name="countStatisticList"
-	 */
-	public void setCountStatisticList(CountStatisticList countStatisticList)
-	
-	
-	
-	
-	{
-		this.countStatisticList = countStatisticList;
-	}
-
-	/**
-	 * @uml.property  name="countStatistic"
-	 * @uml.associationEnd  multiplicity="(0 -1)" aggregation="composite" inverse="countStatisticArray:ualberta.kyomaru.clickercounter.CountStatistic"
-	 */
-	private Collection countStatistic;
-
-	/**
-	 * Getter of the property <tt>countStatistic</tt>
-	 * @return  Returns the countStatistic.
-	 * @uml.property  name="countStatistic"
-	 */
-	public Collection getCountStatistic()
-	
-	{
-	
-		return countStatistic;
-	}
-
-	/**
-	 * Setter of the property <tt>countStatistic</tt>
-	 * @param countStatistic  The countStatistic to set.
-	 * @uml.property  name="countStatistic"
-	 */
-	public void setCountStatistic(Collection countStatistic)
-	
-	{
-	
-		this.countStatistic = countStatistic;
-	}
 }

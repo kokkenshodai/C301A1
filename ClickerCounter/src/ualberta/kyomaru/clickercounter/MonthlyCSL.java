@@ -5,6 +5,12 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
+/*
+ * This class takes events as Dates and
+ * aggregates them as CountStatistics 
+ * by rounding down to the nearest month
+ */
+
 
 public class MonthlyCSL extends CountStatisticList
 {
@@ -16,6 +22,12 @@ public class MonthlyCSL extends CountStatisticList
 		super();
 	}
 
+	//the MonthlyCSL version of addCount
+	//
+	//stores the number of events that 
+	//happen on each month as a CountStatistic
+	//
+	//
 	@Override
 	public void addCount(Date event)
 	{
@@ -33,6 +45,14 @@ public class MonthlyCSL extends CountStatisticList
 		}
 	}
 	
+	
+	//toWholeMonth
+	//
+	//zeroes out the hour, minute, and second values of
+	//the provided Date and sets the day-of-month to 1
+	//(the first of the month)
+	//
+	//
     static Date toWholeMonth(Date d) {
     Calendar c = new GregorianCalendar();
     c.setTime(d);
