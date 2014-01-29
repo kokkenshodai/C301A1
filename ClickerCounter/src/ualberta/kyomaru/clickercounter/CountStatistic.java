@@ -5,10 +5,19 @@ import java.util.Collection;
 import ualberta.kyomaru.clickercounter.CountStatisticArray.CSComparator;
 
 
+/**
+ * @author  kyomaru
+ */
 public class CountStatistic
 {
+	/**
+	 * @uml.property  name="period"
+	 */
 	private Date period;
 	private String name;
+	/**
+	 * @uml.property  name="counts"
+	 */
 	private int counts;
 	
 	public String getString()
@@ -16,12 +25,20 @@ public class CountStatistic
 		return name;
 	}
 	
+	/**
+	 * @return
+	 * @uml.property  name="period"
+	 */
 	public Date getPeriod()
 	{
 	
 		return period;
 	}
 	
+	/**
+	 * @return
+	 * @uml.property  name="counts"
+	 */
 	public int getCounts()
 	{
 	
@@ -78,7 +95,7 @@ public class CountStatistic
 
 	/**
 	 * @uml.property  name="countStatisticArray"
-	 * @uml.associationEnd  inverse="countStatistic:ualberta.kyomaru.clickercounter.CountStatisticArray"
+	 * @uml.associationEnd  
 	 */
 	private CountStatisticArray countStatisticArray;
 

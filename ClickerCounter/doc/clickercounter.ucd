@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="clickercounter" size="1631,570" id="ualberta.kyomaru.clickercounter" metadata="uml2-1.0" initialized="true" tag="1000" key="32303037303533312D3130303020436C69636B6572436F756E7465722F6B796F6D617275">
-  <children xsi:type="editmodel:ClassEditModel" name="CountStatistic" location="345,270" size="145,103" id="ualberta.kyomaru.clickercounter/CountStatistic" runTimeClassModel="addCount(),getCounts(),CountStatistic(Ljava.util.Date;Ljava.lang.String;),getPeriod(),counts,getString(),period,toString()">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.8/@sourceConnections.1" name="CountStatistic" location="345,270" size="145,103" id="ualberta.kyomaru.clickercounter/CountStatistic" runTimeClassModel="getCounts(),addCount(),CountStatistic(Ljava.util.Date;Ljava.lang.String;),getPeriod(),counts,getString(),period,toString()">
     <children xsi:type="editmodel:CompartmentEditModel" size="80,36">
       <children xsi:type="editmodel:AttributeEditModel" name="counts" id="ualberta.kyomaru.clickercounter/CountStatistic#counts"/>
       <children xsi:type="editmodel:AttributeEditModel" name="period" id="ualberta.kyomaru.clickercounter/CountStatistic#period"/>
@@ -9,13 +9,13 @@
       <children xsi:type="editmodel:MethodEditModel" name="toString" location="10,169" id="ualberta.kyomaru.clickercounter/CountStatistic#toString()"/>
     </children>
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
-    <sourceConnections xsi:type="editmodel:AssociationEditModel" id="ualberta.kyomaru.clickercounter/CountStatisticArray@countStatisticArray+ualberta.kyomaru.clickercounter/CountStatistic@countStatistic" source="//@children.0" target="//@children.2" targetEnd="//@children.0/@sourceConnections.0/@children.1" label="//@children.0/@sourceConnections.0/@children.2" sourceEnd="//@children.0/@sourceConnections.0/@children.0" connectionRouterKind="Manhattan">
-      <children xsi:type="editmodel:AssociationEndEditModel" name="countStatistic" location="67,0" id="ualberta.kyomaru.clickercounter/CountStatisticArray@countStatisticArray+ualberta.kyomaru.clickercounter/CountStatistic@countStatistic|ualberta.kyomaru.clickercounter/CountStatistic#countStatistic" attachSource="true" multiplicityLabel="//@children.0/@sourceConnections.0/@children.0/@children.1" roleLabel="//@children.0/@sourceConnections.0/@children.0/@children.0" aggregationKind="Composition" navigable="true">
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" id="ualberta.kyomaru.clickercounter/CountStatistic@countStatistic+ualberta.kyomaru.clickercounter/CountStatisticArray@countStatisticArray" source="//@children.0" target="//@children.2" targetEnd="//@children.0/@sourceConnections.0/@children.1" label="//@children.0/@sourceConnections.0/@children.2" sourceEnd="//@children.0/@sourceConnections.0/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" name="countStatistic" location="67,0" id="ualberta.kyomaru.clickercounter/CountStatistic@countStatistic+ualberta.kyomaru.clickercounter/CountStatisticArray@countStatisticArray|ualberta.kyomaru.clickercounter/CountStatistic#countStatistic" attachSource="true" multiplicityLabel="//@children.0/@sourceConnections.0/@children.0/@children.1" roleLabel="//@children.0/@sourceConnections.0/@children.0/@children.0" aggregationKind="Composition" navigable="true">
         <children xsi:type="editmodel:LabelEditModel" name=" - countStatistic" location="326,250" size="79,13" anchorKind="FirstPart"/>
         <children xsi:type="editmodel:LabelEditModel" name="*" location="419,250" size="5,13" anchorKind="FirstPart"/>
       </children>
-      <children xsi:type="editmodel:AssociationEndEditModel" name="countStatisticArray" location="70,164" id="ualberta.kyomaru.clickercounter/CountStatisticArray@countStatisticArray+ualberta.kyomaru.clickercounter/CountStatistic@countStatistic|ualberta.kyomaru.clickercounter/CountStatisticArray#countStatisticArray" multiplicityLabel="//@children.0/@sourceConnections.0/@children.1/@children.1" roleLabel="//@children.0/@sourceConnections.0/@children.1/@children.0" navigable="true">
-        <children xsi:type="editmodel:LabelEditModel" name=" - countStatisticArray" location="497,201" size="106,13" anchorKind="LastPart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="countStatisticArray" location="70,164" id="ualberta.kyomaru.clickercounter/CountStatistic@countStatistic+ualberta.kyomaru.clickercounter/CountStatisticArray@countStatisticArray|ualberta.kyomaru.clickercounter/CountStatisticArray#countStatisticArray" multiplicityLabel="//@children.0/@sourceConnections.0/@children.1/@children.1" roleLabel="//@children.0/@sourceConnections.0/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" + countStatisticArray" location="497,201" size="110,13" anchorKind="LastPart"/>
         <children xsi:type="editmodel:LabelEditModel" name="0..1" location="465,201" size="18,13" anchorKind="LastPart"/>
       </children>
       <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
@@ -27,13 +27,13 @@
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <sourceConnections xsi:type="editmodel:DependencyEditModel" id="ualberta.kyomaru.clickercounter/ClickerCounterActivity-Standard::Call->ualberta.kyomaru.clickercounter/Counter*ualberta.kyomaru.clickercounter/ClickerCounterActivity-Soyatec::Import->ualberta.kyomaru.clickercounter/Counter" source="//@children.1" target="//@children.3" targetEnd="//@children.1/@sourceConnections.0/@children.2" label="//@children.1/@sourceConnections.0/@children.0" sourceEnd="//@children.1/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
-      <children xsi:type="editmodel:WireLabelEditModel" name="«Import, Call»" size="70,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Call, Import»" size="70,13" anchorKind="MiddlePart"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="123,29" attachSource="true"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="85,0"/>
     </sourceConnections>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.4/@sourceConnections.0 //@children.6/@sourceConnections.0 //@children.7/@sourceConnections.0 //@children.5/@sourceConnections.0 //@children.3/@sourceConnections.4 //@children.8/@sourceConnections.0 //@children.0/@sourceConnections.0" name="CountStatisticArray" location="420,30" size="184,164" id="ualberta.kyomaru.clickercounter/CountStatisticArray" runTimeClassModel="ualberta.kyomaru.clickercounter.CountStatisticArray.CSComparator,sort(),getIndex(Ljava.util.Date;)">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.4/@sourceConnections.0 //@children.6/@sourceConnections.0 //@children.7/@sourceConnections.0 //@children.5/@sourceConnections.0 //@children.3/@sourceConnections.4 //@children.8/@sourceConnections.0 //@children.0/@sourceConnections.0" name="CountStatisticArray" location="420,30" size="184,164" id="ualberta.kyomaru.clickercounter/CountStatisticArray" runTimeClassModel="ualberta.kyomaru.clickercounter.CountStatisticArray.CSComparator,getIndex(Ljava.util.Date;),sort()">
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <children xsi:type="editmodel:CompartmentEditModel" size="73,36">
       <children xsi:type="editmodel:MethodEditModel" name="getIndex" id="ualberta.kyomaru.clickercounter/CountStatisticArray#getIndex(Ljava.util.Date;)"/>
@@ -51,7 +51,7 @@
     </children>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@sourceConnections.0" name="Counter" location="1040,105" size="166,193" id="ualberta.kyomaru.clickercounter/Counter" runTimeClassModel="getMonthlyStatistics(),getDailyStatistics(),getCounts(),getType(),count(),type,Counter(Ljava.lang.String;),toString(),getHourlyStatistics(),getWeeklyStatistics(),counts,reset(),rename(Ljava.lang.String;)">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@sourceConnections.0" name="Counter" location="1040,105" size="166,193" id="ualberta.kyomaru.clickercounter/Counter" runTimeClassModel="getDailyStatistics(),getMonthlyStatistics(),getCounts(),getType(),count(),type,Counter(Ljava.lang.String;),toString(),getHourlyStatistics(),getWeeklyStatistics(),counts,reset(),rename(Ljava.lang.String;)">
     <children xsi:type="editmodel:CompartmentEditModel" size="143,36">
       <children xsi:type="editmodel:AttributeEditModel" name="counts" id="ualberta.kyomaru.clickercounter/Counter#counts"/>
       <children xsi:type="editmodel:AttributeEditModel" name="type" id="ualberta.kyomaru.clickercounter/Counter#type"/>
@@ -66,27 +66,27 @@
     </children>
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ualberta.kyomaru.clickercounter/Counter-Standard::Call->ualberta.kyomaru.clickercounter/HourlyCSL*ualberta.kyomaru.clickercounter/Counter-Standard::Instantiate->ualberta.kyomaru.clickercounter/HourlyCSL*ualberta.kyomaru.clickercounter/Counter-Soyatec::Import->ualberta.kyomaru.clickercounter/HourlyCSL" source="//@children.3" target="//@children.4" targetEnd="//@children.3/@sourceConnections.0/@children.2" label="//@children.3/@sourceConnections.0/@children.0" sourceEnd="//@children.3/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
-      <children xsi:type="editmodel:WireLabelEditModel" name="«Import, Call, Instantiate»" size="129,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Call, Import, Instantiate»" size="129,13" anchorKind="MiddlePart"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="0,138" attachSource="true"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="170,0"/>
     </sourceConnections>
     <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ualberta.kyomaru.clickercounter/Counter-Standard::Call->ualberta.kyomaru.clickercounter/MonthlyCSL*ualberta.kyomaru.clickercounter/Counter-Standard::Instantiate->ualberta.kyomaru.clickercounter/MonthlyCSL*ualberta.kyomaru.clickercounter/Counter-Soyatec::Import->ualberta.kyomaru.clickercounter/MonthlyCSL" source="//@children.3" target="//@children.6" targetEnd="//@children.3/@sourceConnections.1/@children.2" label="//@children.3/@sourceConnections.1/@children.0" sourceEnd="//@children.3/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
-      <children xsi:type="editmodel:WireLabelEditModel" name="«Import, Call, Instantiate»" size="129,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Call, Import, Instantiate»" size="129,13" anchorKind="MiddlePart"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="87,193" attachSource="true"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="77,0"/>
     </sourceConnections>
     <sourceConnections xsi:type="editmodel:DependencyEditModel" id="ualberta.kyomaru.clickercounter/Counter-Standard::Call->ualberta.kyomaru.clickercounter/WeeklyCSL*ualberta.kyomaru.clickercounter/Counter-Standard::Instantiate->ualberta.kyomaru.clickercounter/WeeklyCSL*ualberta.kyomaru.clickercounter/Counter-Soyatec::Import->ualberta.kyomaru.clickercounter/WeeklyCSL" source="//@children.3" target="//@children.7" targetEnd="//@children.3/@sourceConnections.2/@children.2" label="//@children.3/@sourceConnections.2/@children.0" sourceEnd="//@children.3/@sourceConnections.2/@children.1" connectionRouterKind="Manual">
-      <children xsi:type="editmodel:WireLabelEditModel" name="«Import, Call, Instantiate»" size="129,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Call, Import, Instantiate»" size="129,13" anchorKind="MiddlePart"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="0,182" attachSource="true"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="95,0"/>
     </sourceConnections>
     <sourceConnections xsi:type="editmodel:DependencyEditModel" id="ualberta.kyomaru.clickercounter/Counter-Standard::Call->ualberta.kyomaru.clickercounter/DailyCSL*ualberta.kyomaru.clickercounter/Counter-Standard::Instantiate->ualberta.kyomaru.clickercounter/DailyCSL*ualberta.kyomaru.clickercounter/Counter-Soyatec::Import->ualberta.kyomaru.clickercounter/DailyCSL" source="//@children.3" target="//@children.5" targetEnd="//@children.3/@sourceConnections.3/@children.2" label="//@children.3/@sourceConnections.3/@children.0" sourceEnd="//@children.3/@sourceConnections.3/@children.1" connectionRouterKind="Manual">
-      <children xsi:type="editmodel:WireLabelEditModel" name="«Import, Call, Instantiate»" size="129,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Call, Import, Instantiate»" size="129,13" anchorKind="MiddlePart"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="0,147" attachSource="true"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="88,0"/>
     </sourceConnections>
     <sourceConnections xsi:type="editmodel:DependencyEditModel" id="ualberta.kyomaru.clickercounter/Counter-Soyatec::Import->ualberta.kyomaru.clickercounter/CountStatisticArray" source="//@children.3" target="//@children.2" targetEnd="//@children.3/@sourceConnections.4/@children.2" label="//@children.3/@sourceConnections.4/@children.0" sourceEnd="//@children.3/@sourceConnections.4/@children.1" connectionRouterKind="Manual">
-      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="45,13" anchorKind="MiddlePart"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="0,9" attachSource="true"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="184,82"/>
     </sourceConnections>
@@ -101,7 +101,7 @@
     </children>
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ualberta.kyomaru.clickercounter/HourlyCSL-Standard::Call->ualberta.kyomaru.clickercounter/CountStatisticArray" source="//@children.4" target="//@children.2" targetEnd="//@children.4/@sourceConnections.0/@children.2" label="//@children.4/@sourceConnections.0/@children.0" sourceEnd="//@children.4/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
-      <children xsi:type="editmodel:WireLabelEditModel" name="«Call»" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Call»" size="31,13" anchorKind="MiddlePart"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="84,0" attachSource="true"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="99,164"/>
     </sourceConnections>
@@ -120,7 +120,7 @@
     </children>
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ualberta.kyomaru.clickercounter/DailyCSL-Standard::Call->ualberta.kyomaru.clickercounter/CountStatisticArray" source="//@children.5" target="//@children.2" targetEnd="//@children.5/@sourceConnections.0/@children.2" label="//@children.5/@sourceConnections.0/@children.0" sourceEnd="//@children.5/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
-      <children xsi:type="editmodel:WireLabelEditModel" name="«Call»" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Call»" size="31,13" anchorKind="MiddlePart"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="65,0" attachSource="true"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="138,164"/>
     </sourceConnections>
@@ -139,7 +139,7 @@
     </children>
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ualberta.kyomaru.clickercounter/MonthlyCSL-Standard::Call->ualberta.kyomaru.clickercounter/CountStatisticArray" source="//@children.6" target="//@children.2" targetEnd="//@children.6/@sourceConnections.0/@children.2" label="//@children.6/@sourceConnections.0/@children.0" sourceEnd="//@children.6/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
-      <children xsi:type="editmodel:WireLabelEditModel" name="«Call»" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Call»" size="31,13" anchorKind="MiddlePart"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="21,0" attachSource="true"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="184,140"/>
     </sourceConnections>
@@ -158,7 +158,7 @@
     </children>
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ualberta.kyomaru.clickercounter/WeeklyCSL-Standard::Call->ualberta.kyomaru.clickercounter/CountStatisticArray" source="//@children.7" target="//@children.2" targetEnd="//@children.7/@sourceConnections.0/@children.2" label="//@children.7/@sourceConnections.0/@children.0" sourceEnd="//@children.7/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
-      <children xsi:type="editmodel:WireLabelEditModel" name="«Call»" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Call»" size="31,13" anchorKind="MiddlePart"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="42,0" attachSource="true"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="181,164"/>
     </sourceConnections>
@@ -179,7 +179,7 @@
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <sourceConnections xsi:type="editmodel:AssociationEditModel" id="ualberta.kyomaru.clickercounter/CountStatisticArray@countStatisticArray+ualberta.kyomaru.clickercounter/CountStatisticList@countStatisticList" source="//@children.8" target="//@children.2" targetEnd="//@children.8/@sourceConnections.0/@children.1" label="//@children.8/@sourceConnections.0/@children.2" sourceEnd="//@children.8/@sourceConnections.0/@children.0" connectionRouterKind="Manhattan">
       <children xsi:type="editmodel:AssociationEndEditModel" name="countStatisticList" location="0,49" id="ualberta.kyomaru.clickercounter/CountStatisticArray@countStatisticArray+ualberta.kyomaru.clickercounter/CountStatisticList@countStatisticList|ualberta.kyomaru.clickercounter/CountStatisticList#countStatisticList" attachSource="true" multiplicityLabel="//@children.8/@sourceConnections.0/@children.0/@children.1" roleLabel="//@children.8/@sourceConnections.0/@children.0/@children.0" navigable="true">
-        <children xsi:type="editmodel:LabelEditModel" name="- countStatisticList" location="638,194" size="94,13" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name=" + countStatisticList" location="631,194" size="101,13" anchorKind="FirstPart"/>
         <children xsi:type="editmodel:LabelEditModel" name="0..1" location="714,167" size="18,13" anchorKind="FirstPart"/>
       </children>
       <children xsi:type="editmodel:AssociationEndEditModel" name="countStatisticArray" location="184,111" id="ualberta.kyomaru.clickercounter/CountStatisticArray@countStatisticArray+ualberta.kyomaru.clickercounter/CountStatisticList@countStatisticList|ualberta.kyomaru.clickercounter/CountStatisticArray#countStatisticArray" multiplicityLabel="//@children.8/@sourceConnections.0/@children.1/@children.1" roleLabel="//@children.8/@sourceConnections.0/@children.1/@children.0" aggregationKind="Composition" navigable="true">
@@ -187,6 +187,10 @@
         <children xsi:type="editmodel:LabelEditModel" name="0..1" location="611,148" size="18,13" anchorKind="LastPart"/>
       </children>
       <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="ualberta.kyomaru.clickercounter/CountStatistic&lt;-ualberta.kyomaru.clickercounter/CountStatisticList" source="//@children.8" target="//@children.0" targetEnd="//@children.8/@sourceConnections.1/@children.1" sourceEnd="//@children.8/@sourceConnections.1/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,85" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="145,48"/>
     </sourceConnections>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
   </children>

@@ -4,9 +4,18 @@ import java.util.ArrayList;
 import java.util.Date;
 
 
+/**
+ * @author  kyomaru
+ */
 public class Counter
 {
+	/**
+	 * @uml.property  name="counts"
+	 */
 	private ArrayList<Date> counts;
+	/**
+	 * @uml.property  name="type"
+	 */
 	private String type;
 	
 	public Counter(String type)
@@ -25,6 +34,10 @@ public class Counter
 		counts = new ArrayList<Date>();
 	}
 	
+	/**
+	 * @return
+	 * @uml.property  name="type"
+	 */
 	public String getType()
 	{
 		return type;
@@ -35,6 +48,10 @@ public class Counter
 		type = newName;
 	}
 	
+	/**
+	 * @return
+	 * @uml.property  name="counts"
+	 */
 	public int getCounts()
 	{
 		return counts.size();

@@ -35,6 +35,9 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+/**
+ * @author  kyomaru
+ */
 public class ClickerCounterActivity extends Activity
 {
 
@@ -46,6 +49,10 @@ public class ClickerCounterActivity extends Activity
 		
 		//State variables that are saved and loaded
 		private static ArrayList<Counter> counters;
+		/**
+		 * @uml.property  name="currentCounter"
+		 * @uml.associationEnd  
+		 */
 		private Counter currentCounter;
 		private int currentCounterIndex;
 		
@@ -397,7 +404,7 @@ public class ClickerCounterActivity extends Activity
 		    mInputMethodManager.restartInput(mView);
 
 		    AlertDialog.Builder mBuilder = new AlertDialog.Builder(this);
-		    mBuilder.setTitle(getString(R.string.hourlystatstitle));
+		    mBuilder.setTitle(getString(R.string.dailystatstitle));
 		    mBuilder.setPositiveButton(getString(R.string.ok), new Dialog.OnClickListener() {
 		        public void onClick(DialogInterface mDialogInterface, int mWhich) {
 		        	switchToMenuContext();
@@ -422,7 +429,7 @@ public class ClickerCounterActivity extends Activity
 		    mInputMethodManager.restartInput(mView);
 
 		    AlertDialog.Builder mBuilder = new AlertDialog.Builder(this);
-		    mBuilder.setTitle(getString(R.string.hourlystatstitle));
+		    mBuilder.setTitle(getString(R.string.weeklystatstitle));
 		    mBuilder.setPositiveButton(getString(R.string.ok), new Dialog.OnClickListener() {
 		        public void onClick(DialogInterface mDialogInterface, int mWhich) {
 		        	switchToMenuContext();
@@ -447,7 +454,7 @@ public class ClickerCounterActivity extends Activity
 		    mInputMethodManager.restartInput(mView);
 
 		    AlertDialog.Builder mBuilder = new AlertDialog.Builder(this);
-		    mBuilder.setTitle(getString(R.string.hourlystatstitle));
+		    mBuilder.setTitle(getString(R.string.monthlystatstitle));
 		    mBuilder.setPositiveButton(getString(R.string.ok), new Dialog.OnClickListener() {
 		        public void onClick(DialogInterface mDialogInterface, int mWhich) {
 		        	switchToMenuContext();

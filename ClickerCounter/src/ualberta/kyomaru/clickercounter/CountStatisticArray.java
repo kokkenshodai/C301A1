@@ -9,13 +9,13 @@ import java.util.Collection;
 
 
 /**
- * @uml.dependency   supplier="ualberta.kyomaru.clickercounter.CountStatistic"
+ * @uml.dependency  supplier="ualberta.kyomaru.clickercounter.CountStatistic"
  */
 public class CountStatisticArray extends ArrayList<CountStatistic>
 {
 
 	/**
-	 * @uml.dependency   supplier="ualberta.kyomaru.clickercounter.CountStatistic"
+	 * @uml.dependency  supplier="ualberta.kyomaru.clickercounter.CountStatistic"
 	 */
 	public class CSComparator implements Comparator<CountStatistic>{
 
@@ -26,7 +26,7 @@ public class CountStatisticArray extends ArrayList<CountStatistic>
 
 		/**
 		 * @uml.property  name="countStatistic"
-		 * @uml.associationEnd  inverse="cSComparator:ualberta.kyomaru.clickercounter.CountStatistic"
+		 * @uml.associationEnd  
 		 */
 		private CountStatistic countStatistic;
 
@@ -93,9 +93,9 @@ public class CountStatisticArray extends ArrayList<CountStatistic>
 		return ret;
 	}
 
-	/** 
-	 * @uml.property name="countStatisticList"
-	 * @uml.associationEnd inverse="countStatisticArray:ualberta.kyomaru.clickercounter.CountStatisticList"
+	/**
+	 * @uml.property  name="countStatisticList"
+	 * @uml.associationEnd  
 	 */
 	private CountStatisticList countStatisticList;
 

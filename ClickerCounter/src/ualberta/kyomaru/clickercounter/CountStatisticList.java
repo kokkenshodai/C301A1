@@ -4,12 +4,15 @@ import java.util.Date;
 
 
 /**
- * @uml.dependency   supplier="ualberta.kyomaru.clickercounter.CountStatistic"
- * @uml.dependency   supplier="ualberta.kyomaru.clickercounter.CountStatisticArray"
+ * @uml.dependency  supplier="ualberta.kyomaru.clickercounter.CountStatisticArray"
+ * @uml.dependency  supplier="ualberta.kyomaru.clickercounter.CountStatistic"
  */
-public abstract class CountStatisticList extends 
-CountStatistic
+public abstract class CountStatisticList
 {
+	/**
+	 * @uml.property  name="statistics"
+	 * @uml.associationEnd  
+	 */
 	private CountStatisticArray statistics;
 	
 	public CountStatisticList()
@@ -19,14 +22,18 @@ CountStatistic
 	
 	public abstract void addCount(Date count);
 	
+	/**
+	 * @return
+	 * @uml.property  name="statistics"
+	 */
 	public CountStatisticArray getStatistics()
 	{
 		return statistics;
 	}
 
-	/** 
-	 * @uml.property name="countStatisticArray"
-	 * @uml.associationEnd aggregation="composite" inverse="countStatisticList:ualberta.kyomaru.clickercounter.CountStatisticArray"
+	/**
+	 * @uml.property  name="countStatisticArray"
+	 * @uml.associationEnd  
 	 */
 	private CountStatisticArray countStatisticArray;
 
